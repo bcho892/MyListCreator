@@ -1,0 +1,30 @@
+.app{
+  height: 100vh;
+}
+.maincontainer{
+  display:flex;
+  height: calc(100vh - 5rem);
+  padding-top: 2rem;
+  overflow: visible;
+}
+.side{
+  float: left;
+  overflow: visible;
+}
+.main{
+  margin-top: 3rem;
+  height: calc(100vh - 10rem);
+  flex:4;
+  overflow: visible;
+  margin-right: 2rem;
+}
+
+@media only screen and (max-width:1000px) {
+  .side {
+    display: none;
+  }
+  .main {
+    margin-right: 0;
+  }
+}
+

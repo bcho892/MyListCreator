@@ -1,0 +1,14 @@
+.noresults{
+    padding-top: 60%;
+    
+}
+
+.thelist{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    align-items: center;
+    overflow: visible;
+ 
+}

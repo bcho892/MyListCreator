@@ -1,0 +1,39 @@
+.collection{
+    width: 100%;
+    height: calc(100vh - 8rem);
+    z-index: 99;
+    justify-content: center;
+    
+}
+.collectioncontainer{
+    height: 100%;
+    width: 100%;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+}
+
+.displayholder{
+    padding-top: 2rem;
+    height: 100%;
+    display: flex;
+    overflow-y: scroll;
+    background: #FBE9E7;
+   border-radius: 1rem 0 0 0 ;
+   width: 100%;
+   justify-content: center;
+}   
+
+.sort{
+    position:absolute;
+    right:3rem;
+    bottom:3rem;
+}
+
+.noitem{
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}

@@ -1,0 +1,46 @@
+.header{
+    width: 100%;
+    height: 5rem;
+    background-color: white;
+    position: fixed;
+    top:0;
+    z-index: 999;
+}
+.container{
+    height: 100%;
+    margin: 0 2.5rem;
+    display:flex;
+    align-items: center;
+    justify-content:left;
+    flex-direction: row;
+}
+
+.menubutton{
+    margin-left:2rem;
+    border-radius: 3px;
+    color:#D84315;
+    display: flex;
+
+}
+
+
+
+.menu:hover{
+    background-color: #FBE9E7;
+}
+
+
+.logo{
+    color:#D84315;
+    font-weight: bold;
+    font-size:2rem;
+    cursor:pointer;
+    user-select: none;
+}
+
+@media only screen and (min-width: 1000px){
+    .mobilemenu{
+        display:none;
+  
+    }
+}

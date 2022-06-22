@@ -1,0 +1,39 @@
+.searchfield {
+    background-color: #FBE9E7;
+    width: 100%;
+    height: inherit;
+    z-index: 99;
+    padding: 2rem 0;
+    border-radius: 1rem 0 0 0;
+    overflow-y: scroll;
+    
+
+}
+
+.resultholder {
+    display: flex;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-content: center;
+    background-color: #E0E0E0;
+    margin: 10px 1.5rem;
+    border-radius: 1rem;
+}
+
+.infoholder {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paperholder {
+    justify-content: center;
+    flex-direction: row;
+    height: 100%;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+
+}
+

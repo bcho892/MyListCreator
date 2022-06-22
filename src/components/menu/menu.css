@@ -1,0 +1,40 @@
+.menucontainer{
+    display: flex;
+    width: 18rem;
+    height: 100%;
+    background-color: white;
+    overflow: hidden;
+    justify-content: left;
+}
+
+
+.options{
+    margin-left:2.4rem;
+    margin-top: 5.5rem;
+}
+.pages{
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    width: 10rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    color: #757575;
+}
+
+.pages p{
+    padding-left: 0.75rem;
+}
+.pages:hover{
+    background-color: #FBE9E7;
+    color:#D84315;
+}
+
+.navlink.selected .pages{
+    background-color: #FBE9E7;
+    color:#D84315;
+}
+
