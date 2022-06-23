@@ -10,13 +10,11 @@ import CurrentContext from './CurrentContext';
 export default function Result({ singleTitle, scrollfunc }) {
     const {changeCurrent} = React.useContext(CurrentContext);
 
-    var touse, imgurl;
+    var touse;
     if (singleTitle === '') {
         return <div>Error</div>
     } else {
         touse = singleTitle.title;
-        imgurl = singleTitle.images.jpg.image_url;
-        console.log(imgurl);
     }
     return (
         <Card variant="outlined" sx={{borderRadius:"1rem", textAlign:"center", width: "80%",  margin: '1rem', overflow:'visible', borderColor:"primary" }}>
@@ -24,7 +22,7 @@ export default function Result({ singleTitle, scrollfunc }) {
                                             scrollfunc();}} 
                                             sx={{borderRadius:"1rem"}}>
             <CardContent>
-                <Grid container wrap="nowrap" spacing={1} direction="column" justifyContent="center" lg={{padding:"2rem"}}>
+                <Grid container wrap="nowrap" spacing={1} direction="column" justifyContent="center" sx={{padding:"2rem"}}>
                     <Grid item>
                         <Typography style={{ margin: '1rem'}} variant="h5" component="div">
                             {touse}

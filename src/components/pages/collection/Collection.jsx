@@ -12,7 +12,15 @@ import { SpeedDial, SpeedDialAction } from "@mui/material";
 
 
 const SortButton = () => {
-  const {anime, setAnime } = React.useContext(CollectionContext);
+  const { anime, setAnime } = React.useContext(CollectionContext);
+  const checkSame = (array) => {
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].title !== anime[i].title) {
+        return false;
+      }
+    }
+    return true;
+  }
 
   return (
 
@@ -20,15 +28,17 @@ const SortButton = () => {
       ariaLabel='Sort button'
       style={{ position: "absolute", bottom: "1rem", right: "2rem" }}
       icon={<SortIcon />}
-
     >
-
       <SpeedDialAction
         icon={<SortByAlphaIcon />}
         tooltipTitle={"Sort by Title"}
         onClick={() => {
           let temp = [...anime];
+          anime.reverse();
           temp.sort((a, b) => a.title.localeCompare(b.title));
+          if (!checkSame(temp)) {
+            temp.reverse();
+          }
           setAnime(temp);
         }}
       />
@@ -37,8 +47,13 @@ const SortButton = () => {
         tooltipTitle={"Sort by MAL Ranking"}
         onClick={() => {
           let temp = [...anime];
+          anime.reverse();
           temp.sort((a, b) => a.score - b.score);
-          setAnime(temp)}}/>
+          if (!checkSame(temp)) {
+            temp.reverse();
+          }
+          setAnime(temp)
+        }} />
 
     </SpeedDial>
   )
@@ -53,7 +68,7 @@ export default function Collection() {
   if (anime.length === 0) {
     collectionView = <EmptyCollectionCard />
   } else {
-    collectionView = anime.map(anime => <Grid item><Display anime={anime} /> </Grid>)
+    collectionView = anime.map(anime => <Grid key={anime.mal_id} item><Display anime={anime} /> </Grid>)
   }
 
   return (

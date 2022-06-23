@@ -7,7 +7,7 @@ import Collection from '../collection/Collection'
 
 function Home() {
   return (
-    <div class>
+    <div>
       <Header/>
       <div className="maincontainer">
       <span className='side'><Menu/></span>

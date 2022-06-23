@@ -18,13 +18,13 @@ export default function Display({ anime }) {
       <CardHeader
         component={Typography}
         title={anime.title}>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="h4">
           {anime.title}
         </Typography>
       </CardHeader>
       <CardActionArea>
         <CardContent>
-          <img src={anime.images.jpg.image_url} alt={anime.images.webp.image_url} width="100%"></img>
+          <img src={anime.images.jpg.image_url} alt={anime.images.webp.image_url} width="100%" style={{borderRadius:"0.75rem"}}></img>
           <Typography variant="body2" color="text.secondary" >
           </Typography>
         </CardContent>

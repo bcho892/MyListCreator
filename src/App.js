@@ -15,6 +15,9 @@ var theme = createTheme({
     palette: {
         primary: {
             main: '#D84315',
+        }, 
+        secondary: {
+            main: '#FBE9E7'
         }
 
     },

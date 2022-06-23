@@ -5,7 +5,6 @@ import UserList from './UserList';
 import "./generatelist.css"
 export default function GenerateList() {
 
-
     return (
         <div class>
             <Header />
@@ -20,9 +19,7 @@ export default function GenerateList() {
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     );
 }
