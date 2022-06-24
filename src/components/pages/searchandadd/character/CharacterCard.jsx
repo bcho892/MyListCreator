@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 export default function CharacterCard({character}) {
   return (
-    <Card sx={{ width: 250}}>
+    <Card sx={{ width: 250, userSelect:"none" }} >
         <CardMedia
           component="img"
           height="300"

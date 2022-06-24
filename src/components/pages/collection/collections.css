@@ -29,6 +29,18 @@
     right:3rem;
     bottom:3rem;
 }
+.recommended{
+    transition: transform 1s;
+    -webkit-filter: brightness(100%);
+
+}
+.recommended:hover{
+    transform:scale(1.2);
+    cursor:pointer;
+    -webkit-filter: brightness(40%);
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
 
 .noitem{
  

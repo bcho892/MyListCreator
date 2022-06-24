@@ -31,7 +31,7 @@ export default function Searchandadd() {
     const unblock = () => {
         setTimeout(() => {
             setIsSpamBlock(false);
-        }, 333);
+        }, 320);
     }
 
     async function getCharacters(id) {
@@ -48,8 +48,10 @@ export default function Searchandadd() {
 
         if (isSpamBlock) return;
         setIsSpamBlock(true);
+        
         console.log("API Call");
         const url = queries[index];
+        setTitles("LoadingWait");
         let res = await fetch(url);
         setTitles(await res.json());
 
@@ -62,7 +64,9 @@ export default function Searchandadd() {
         }
         setIsSpamBlock(true);
         setPreviousSearch(searchTerm);
+        
         const url = "https://api.jikan.moe/v4/anime?q=" + searchTerm;
+        setTitles("LoadingWait");
         let res = await fetch(url);
         setTitles(await res.json());
         unblock();
@@ -71,7 +75,10 @@ export default function Searchandadd() {
 
     function scrollDown() {
         let height = resultRef.current.offsetHeight;
-        resultRef.current.scrollBy(0, height);
+        setTimeout(() => {
+            resultRef.current.scrollBy(0, height);
+
+        }, 1);
     }
 
     const enterSubmit = e => {

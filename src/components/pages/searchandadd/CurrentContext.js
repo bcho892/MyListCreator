@@ -12,6 +12,7 @@ export function CurrentProvider({children}){
     const setCharacters = (characterList) => {
         setShowCharacters(characterList)
     }
+ 
     return(
         <CurrentContext.Provider value={{currentShow, changeCurrent,showCharacters, setCharacters}}>{children}</CurrentContext.Provider>
     )
