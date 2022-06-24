@@ -16,20 +16,32 @@ export default function Searchandadd() {
     const [isSpamBlock, setIsSpamBlock] = React.useState(false);
     const [searchTerm, setSearchTerm] = React.useState('');
     const [previousSearch, setPreviousSearch] = React.useState('');
-    const [name, setName] = React.useState('');
+    const [titles, setTitles] = React.useState([]);
     const queries = ["https://api.jikan.moe/v4/top/anime?filter=bypopularity",
         "https://api.jikan.moe/v4/top/anime?filter=upcoming",
         "https://api.jikan.moe/v4/top/anime?filter=airing"]
+    const { currentShow, showCharacters, setCharacters } = React.useContext(CurrentContext);
 
 
     React.useEffect(() => {
         unblock();
-    }, [name])
+
+    }, [titles, showCharacters])
 
     const unblock = () => {
         setTimeout(() => {
             setIsSpamBlock(false);
-        }, 500);
+        }, 333);
+    }
+
+    async function getCharacters(id) {
+
+        if (isSpamBlock) return;
+        setIsSpamBlock(true);
+        const url = "https://api.jikan.moe/v4/anime/" + id + "/characters";
+        let res = await fetch(url);
+        setCharacters(await res.json());
+
     }
 
     async function getPremade(index) {
@@ -39,15 +51,9 @@ export default function Searchandadd() {
         console.log("API Call");
         const url = queries[index];
         let res = await fetch(url);
-        setName(await res.json());
+        setTitles(await res.json());
 
     }
-
-    function scrollDown() {
-        let height = resultRef.current.offsetHeight;
-        resultRef.current.scrollBy(0, height);
-    }
-
 
     async function whenSearch() {
         if (isSpamBlock) return;
@@ -58,9 +64,14 @@ export default function Searchandadd() {
         setPreviousSearch(searchTerm);
         const url = "https://api.jikan.moe/v4/anime?q=" + searchTerm;
         let res = await fetch(url);
-        setName(await res.json());
+        setTitles(await res.json());
         unblock();
-        console.log(name);
+        console.log(titles);
+    }
+
+    function scrollDown() {
+        let height = resultRef.current.offsetHeight;
+        resultRef.current.scrollBy(0, height);
     }
 
     const enterSubmit = e => {
@@ -73,7 +84,6 @@ export default function Searchandadd() {
         setSearchTerm(e.target.value);
     };
 
-    const { currentShow } = React.useContext(CurrentContext);
 
     return (
 
@@ -112,13 +122,13 @@ export default function Searchandadd() {
                             <Suggestions fetchFor={getPremade} />
                         </div>
                         <div className="resultholder">
-                            <ResultsList titles={name} scrollfunc={scrollDown} />
+                            <ResultsList titles={titles} scrollfunc={scrollDown} charFunc={getCharacters} />
                         </div>
                     </Paper >
                 </Grid>
                 <Grid xs={12} item style={{ maxWidth: "inherit" }}>
 
-                    <CurrentShow show={currentShow} />
+                    <CurrentShow show={currentShow} characters={showCharacters} />
 
                 </Grid>
             </Grid>

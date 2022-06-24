@@ -3,12 +3,12 @@ import Result from "./Result"
 import "./resultlist.css"
 import Skeleton from '@mui/material/Skeleton';
 import Box from '@mui/material/Box';
-export default function ResultsList({ titles, scrollfunc }) {
+export default function ResultsList({ titles, scrollfunc, charFunc }) {
 
 
 
 
-    if (titles === '') {
+    if (titles === []) {
         return (
             <Box sx={{ width: "50%", marginTop: "25vh" }}>
                 <Skeleton />
@@ -32,7 +32,7 @@ export default function ResultsList({ titles, scrollfunc }) {
             </Box>
         )
     } else {
-        var toDisplay = titles.data.map(anime => <Result key={anime.mal_id} singleTitle={anime} scrollfunc={scrollfunc}></Result>)
+        var toDisplay = titles.data.map(anime => <Result key={anime.mal_id} singleTitle={anime} scrollfunc={scrollfunc} charFunc={charFunc}></Result>)
     }
     return (
 

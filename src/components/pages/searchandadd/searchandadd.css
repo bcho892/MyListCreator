@@ -10,6 +10,7 @@
 
 }
 
+
 .resultholder {
     display: flex;
     height: 100%;
@@ -17,8 +18,9 @@
     overflow-x: hidden;
     justify-content: center;
     background-color: #E0E0E0;
-    margin: 10px 1.5rem;
+    margin: 10px 2vw;
     border-radius: 1rem;
+
 }
 
 .infoholder {

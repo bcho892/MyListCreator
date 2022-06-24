@@ -1,9 +1,5 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions, Tooltip } from '@mui/material';
+import { Button, Card, CardContent, Typography, CardActions, Tooltip } from '@mui/material';
 import CollectionContext from '../pages/searchandadd/CollectionContext';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import InfoIcon from '@mui/icons-material/Info';
@@ -14,40 +10,42 @@ export default function Display({ anime }) {
   const { deleteAnime } = React.useContext(CollectionContext);
   return (
 
-    <Card variant="outlined" style={{ maxWidth: "350px", minWidth: "330px", textAlign: "left"}}>
-      <CardHeader
-        component={Typography}
-        title={anime.title}>
-        <Typography gutterBottom variant="h5" component="h4">
+    <Card variant="outlined" style={{ maxWidth: "350px", minWidth: "330px", textAlign: "center"}}>
+
+
+        
+        <CardContent sx={{padding:"10px"}}>
+        <Typography variant="body2" color="text.secondary"  >
           {anime.title}
-        </Typography>
-      </CardHeader>
-      <CardActionArea>
-        <CardContent>
-          <img src={anime.images.jpg.image_url} alt={anime.images.webp.image_url} width="100%" style={{borderRadius:"0.75rem"}}></img>
-          <Typography variant="body2" color="text.secondary" >
           </Typography>
+          <img src={anime.images.jpg.image_url} alt={anime.images.webp.image_url} width="100%" style={{borderRadius:"0.75rem", paddingTop:"10px"}}></img>
+
         </CardContent>
-      </CardActionArea>
-      <CardActions>
+     
+
+      <CardActions sx={{paddingTop:0}} disableSpacing>
+ 
+        <span className="buttons" style={{marginLeft:"auto"}}>
         <Tooltip title="Delete Title">
-          <Button size="small" color='primary' onClick={() => deleteAnime(anime.mal_id)}>
+          <Button style={{minWidth:"40px"}}  color='primary' onClick={() => deleteAnime(anime.mal_id)}>
             <DeleteForeverIcon />
           </Button>
         </Tooltip>
         <NavLink to="/addtitle" style={{ textDecoration: "none" }}>
           <Tooltip title="Info">
-            <Button size="small" color='primary'>
+            <Button style={{minWidth:"40px"}}  color='primary'>
               <InfoIcon />
             </Button>
           </Tooltip>
         </NavLink>
         <Tooltip title="Go to MAL site">
-          <Button size="small" color='primary' onClick={() => window.open(anime.url, "_blank")}>
+          <Button style={{minWidth:"40px"}} color='primary' onClick={() => window.open(anime.url, "_blank")}>
             <LanguageIcon />
           </Button>
         </Tooltip>
+        </span>
       </CardActions>
+
     </Card>
   );
 }

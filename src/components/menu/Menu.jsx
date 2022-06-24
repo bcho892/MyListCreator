@@ -1,8 +1,9 @@
 import "./menu.css"
 import React from 'react'
-import Typography from '@mui/material/Typography';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';import SummarizeIcon from '@mui/icons-material/Summarize';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import SummarizeIcon from '@mui/icons-material/Summarize';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import  Typography   from "@mui/material/Typography";
 import {NavLink} from "react-router-dom"
 export default function Menu() {
   return (
@@ -13,12 +14,14 @@ export default function Menu() {
                 Options
                 </Typography>
                 <NavLink  to="/" style={{textDecoration:"none"}} className={({ isActive }) => "navlink" + (isActive ? " selected" : "")}>
+                
                 <li className="pages">
-                  
+                
                   <SummarizeIcon/>
                     <p>My Collection</p>
-                    
+                   
                 </li>
+                
                 </NavLink>
                 <NavLink  to="/addtitle" style={{textDecoration:"none"}} className={({ isActive }) => "navlink" + (isActive ? " selected" : "")}>
 

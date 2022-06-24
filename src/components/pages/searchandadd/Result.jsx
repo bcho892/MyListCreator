@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 import CurrentContext from './CurrentContext';
 
 
-export default function Result({ singleTitle, scrollfunc }) {
+export default function Result({ singleTitle, scrollfunc, charFunc }) {
     const {changeCurrent} = React.useContext(CurrentContext);
 
     var touse;
@@ -17,8 +17,9 @@ export default function Result({ singleTitle, scrollfunc }) {
         touse = singleTitle.title;
     }
     return (
-        <Card variant="outlined" sx={{borderRadius:"1rem", textAlign:"center", width: "80%",  margin: '1rem', overflow:'visible', borderColor:"primary" }}>
+        <Card elevation={2} sx={{borderRadius:"1rem", textAlign:"center", width: "80%",  margin: '1rem', overflow:'visible', borderColor:"primary" }} >
             <CardActionArea onClick={() => {changeCurrent(singleTitle);
+                                            charFunc(singleTitle.mal_id);
                                             scrollfunc();}} 
                                             sx={{borderRadius:"1rem"}}>
             <CardContent>
@@ -31,7 +32,7 @@ export default function Result({ singleTitle, scrollfunc }) {
                    
                     <Grid item>
                         <Typography variant="h2" color="text.secondary">
-                            {singleTitle.score}/10
+                            {singleTitle.score ? singleTitle.score : "?"}/10
                         </Typography>
                     </Grid>
                     <Grid item>

@@ -9,10 +9,11 @@ import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 import CollectionContext from "../searchandadd/CollectionContext";
 import EmptyCollectionCard from "./EmptyCollectionCard";
 import { SpeedDial, SpeedDialAction } from "@mui/material";
+import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 
 
 const SortButton = () => {
-  const { anime, setAnime } = React.useContext(CollectionContext);
+  const { anime, setAnime,clear } = React.useContext(CollectionContext);
   const checkSame = (array) => {
     for (let i = 0; i < array.length; i++) {
       if (array[i].title !== anime[i].title) {
@@ -54,15 +55,22 @@ const SortButton = () => {
           }
           setAnime(temp)
         }} />
-
+      <SpeedDialAction
+        icon={<DeleteSweepIcon />}
+        tooltipTitle={"Remove All Items"}
+        onClick={() => {
+          clear();
+        }
+        } />
     </SpeedDial>
+
   )
 
 }
 
 export default function Collection() {
-
   const { anime } = React.useContext(CollectionContext);
+
   var collectionView;
   console.log()
   if (anime.length === 0) {

@@ -15,7 +15,14 @@
 .detailbox{
     flex: 1;
  
-    margin: 5vw 5vw 5vw 0;
+    margin: 2rem 5vw 2rem 0;
+}
+
+
+.characters{
+    margin: 0 5vw;
+    width: 100%;
+    overflow-x: auto;
 }
 
 @media only screen and (max-width:1200px){
@@ -27,4 +34,14 @@
         margin: 1rem 5vw;
     }
  
+}
+
+@media only screen and (min-width:1200px){
+    .animedetails{
+        flex-direction: column;
+
+    }
+    .detailbox{
+        margin: 1rem 2rem;
+    }
 }

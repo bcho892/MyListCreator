@@ -12,18 +12,21 @@ export function CollectionProvider({ children }) {
 
 
     const addAnime = (title) => {
-        if (anime.includes(title) || title.length === 0) return;
         setAnime((existing) => [...existing, title]);
         console.log(anime);
 
     };
     const deleteAnime = (id) => {
         setAnime((anime) => anime.filter((show) => show.mal_id !== id))
-        
+
+    }
+
+    const clear = () => {
+        setAnime([]);
     }
 
     return (
-        <CollectionContext.Provider value={{ anime, setAnime, addAnime, deleteAnime }}>{children}</CollectionContext.Provider>
+        <CollectionContext.Provider value={{ anime, setAnime, addAnime, deleteAnime, clear }}>{children}</CollectionContext.Provider>
     )
 }
 
