@@ -10,6 +10,10 @@ import CurrentContext from "./CurrentContext";
 import ResultsList from './ResultsList';
 import CurrentShow from "./CurrentShow";
 import Suggestions from "./Suggestions";
+import Fab from '@mui/material/Fab';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+
+
 
 export default function Searchandadd() {
     const resultRef = React.useRef(null);
@@ -34,6 +38,7 @@ export default function Searchandadd() {
         }, 320);
     }
 
+
     async function getCharacters(id) {
 
         if (isSpamBlock) return;
@@ -44,12 +49,11 @@ export default function Searchandadd() {
 
     }
 
+
     async function getPremade(index) {
 
         if (isSpamBlock) return;
         setIsSpamBlock(true);
-        
-        console.log("API Call");
         const url = queries[index];
         setTitles("LoadingWait");
         let res = await fetch(url);
@@ -64,13 +68,11 @@ export default function Searchandadd() {
         }
         setIsSpamBlock(true);
         setPreviousSearch(searchTerm);
-        
         const url = "https://api.jikan.moe/v4/anime?q=" + searchTerm;
         setTitles("LoadingWait");
         let res = await fetch(url);
         setTitles(await res.json());
         unblock();
-        console.log(titles);
     }
 
     function scrollDown() {
@@ -80,10 +82,11 @@ export default function Searchandadd() {
 
         }, 1);
     }
-
+    function scrollUp(){
+        resultRef.current.scrollTo({ top: 0})
+    }
     const enterSubmit = e => {
         e.preventDefault();
-        console.log("submit");
         whenSearch();
     };
 
@@ -126,10 +129,12 @@ export default function Searchandadd() {
                             ></TextField>
                         </Box>
                         <div className="suggestionholder">
-                            <Suggestions fetchFor={getPremade} />
+                            <Suggestions fetchFor={getPremade}/>
                         </div>
                         <div className="resultholder">
-                            <ResultsList titles={titles} scrollfunc={scrollDown} charFunc={getCharacters} />
+                            <div className="resultcontent">
+                                <ResultsList titles={titles} scrollfunc={scrollDown} charFunc={getCharacters} />
+                            </div>
                         </div>
                     </Paper >
                 </Grid>
@@ -139,6 +144,12 @@ export default function Searchandadd() {
 
                 </Grid>
             </Grid>
+
+            <Fab color="primary" mini={true} onClick={() => scrollUp()} sx={{ position: "absolute", bottom: "1rem", right: "1rem" }} aria-label="toTop" >
+                <ArrowUpwardIcon />
+            </Fab>
+
+
 
         </div>
     )

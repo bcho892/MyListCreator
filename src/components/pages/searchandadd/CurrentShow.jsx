@@ -19,32 +19,29 @@ export default function CurrentShow({ show, characters }) {
     const ref = React.createRef(null);
     const dragCircle = React.createRef(null);
     const mouseDownHandle = (e) => {
-        setDragScroll({ currentScroll:ref.current.scrollLeft, mouseDown: true, currentX: e.clientX-ref.current.offsetLeft });
-        console.log("mosuedown")
+        setDragScroll({ currentScroll: ref.current.scrollLeft, mouseDown: true, currentX: e.clientX - ref.current.offsetLeft });
     }
 
     const mouseUpHandle = (e) => {
-        setDragScroll({...dragScroll, mouseDown: false });
+        setDragScroll({ ...dragScroll, mouseDown: false });
     }
 
     const openDC = (e) => {
         dragCircle.current.classList.add("on");
-    
+
     }
     const closeDC = (e) => {
         dragCircle.current.classList.remove("on");
-
     }
 
     const dragHandle = (e) => {
-        dragCircle.current.style.left= e.clientX + 'px';
+        dragCircle.current.style.left = e.clientX + 'px';
         dragCircle.current.style.top = e.clientY + 'px';
-        if(dragScroll.mouseDown) {
-            e.preventDefault();
-            const x = e.pageX - ref.current.offsetLeft;
-            const walk = (x - dragScroll.currentX) * 2;
-            ref.current.scrollLeft = dragScroll.currentScroll - walk;
-        }
+        if (!dragScroll.mouseDown) return;
+        const x = e.pageX - ref.current.offsetLeft;
+        const walk = (x - dragScroll.currentX) * 2;
+        ref.current.scrollLeft = dragScroll.currentScroll - walk;
+
     }
 
     const handleClose = () => {
@@ -82,14 +79,14 @@ export default function CurrentShow({ show, characters }) {
 
     return (
         <div>
-            <div className="dragcircle" 
-            ref={dragCircle} >Drag</div>
+            <div className="dragcircle"
+                ref={dragCircle} >Drag</div>
             <Paper variant="outlined"  >
                 <Grid container sx={{ width: "100%", justifyContent: "center", alignItems: "center" }}>
                     <Grid item sx={12}>
 
                         <div className="currentdisplay">
-                            <Typography variant='h2' style={{ textAlign: "center", padding: '2rem 2rem 0 2rem' }}>{show.title}</Typography>
+                            <Typography variant='h2' style={{ textAlign: "left", padding: '2rem 2rem 0 2rem' }}>{show.title}</Typography>
                             <Typography variant='h6' color='text.secondary'>{show.title_japanese}</Typography>
                             <Divider variant="middle" sx={{ width: "90%", mt: "2rem" }} />
                             <div className="animedetails" >
@@ -100,36 +97,37 @@ export default function CurrentShow({ show, characters }) {
 
                                 <span className="detailbox">
                                     <Divider variant="middle" sx={{ width: "100%", margin: "2rem 0" }} />
-                                    <Typography variant='h5' style={{ textAlign: "center", marginBottom: "2rem" }} >Details</Typography>
+                                    <Typography variant='h5' style={{ textAlign: "left", marginBottom: "2rem" }} >Details</Typography>
                                     <InfoCard show={show} showImage={bigScreen} />
                                 </span>
                             </div>
                         </div>
                     </Grid>
                     <Grid item sx={12}
-                    
-                        >
+
+                    >
                         <Divider variant="middle" sx={{ width: "100%", margin: "2rem 0" }} />
 
-                        <Typography variant='h5' style={{ textAlign: "center" }} gutterBottom>Characters</Typography>
+                        <Typography variant='h5' style={{ textAlign: "left" }} gutterBottom>Characters</Typography>
                         <Paper elevation={0}
                             onMouseDown={mouseDownHandle}
                             onMouseUp={mouseUpHandle}
                             onMouseMove={dragHandle}
                             onMouseOver={openDC}
                             onMouseLeave={closeDC}
-                            ref={ref}
-                            sx={{cursor:"grab", margin: "2rem 0", display: "flex", flexDirection: "row", width: "100%", overflowX: "auto", justifyContent: "center", alignItems: "center", minHeight: "23rem", backgroundColor: "#E0E0E0" }}
+                            
+                            sx={{ margin: "2rem 0", display: "flex", flexDirection: "row", width: "100%", overflowX: "auto", justifyContent: "center", alignItems: "center", minHeight: "23rem", backgroundColor: "#E0E0E0" }}
 
                         >
+                            <div className="charactercontent" ref={ref}>
                             <List sx={{ display: "flex", flexDirection: "row", width: fullWidth ? "76vw" : "62vw" }}>
                                 {characters.length !== [] && characters.data ? characters.data.slice(0, 20).map(data => <ListItem><CharacterCard character={data} /></ListItem>) : <CharacterCard character={null} />}
                             </List>
+                            </div>
                         </Paper>
-                        {preview ? <div>
+                        <div>
                             <Divider variant="middle" sx={{ width: "100%", margin: "2rem 0" }} />
-                            <Typography variant='h5' style={{ textAlign: "center", marginBottom: "2rem" }} >Trailer</Typography>
-                        </div> : null}
+                        </div>
                     </Grid>
 
                     <Grid item sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
@@ -139,17 +137,19 @@ export default function CurrentShow({ show, characters }) {
 
                     </Grid>
                     <Divider variant="middle" sx={{ width: "90%", marginTop: "2rem" }} />
+                    <Grid item sx={12}>
+                        <Button variant="contained"
+                            style={{ margin: "2rem 1rem" }}
+                            onClick={() => { handleOpen() }}
+                            disableElevation >
+                            Add </Button>
+                        <Button variant="contained"
+                            style={{ margin: "2rem 1rem" }}
+                            onClick={() => window.open(show.url, "_blank","noopener")}
+                            disableElevation >
+                            View On MAL </Button>
 
-                    <Button variant="contained"
-                        style={{ margin: "2rem 1rem" }}
-                        onClick={() => { handleOpen() }}
-                        disableElevation >
-                        Add to Collection </Button>
-                    <Button variant="contained"
-                        style={{ margin: "2rem 1rem" }}
-                        onClick={() => { handleOpen() }}
-                        disableElevation >
-                        View On MAL </Button>
+                    </Grid>
                 </Grid>
 
 

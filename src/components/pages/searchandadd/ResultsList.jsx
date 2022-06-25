@@ -8,9 +8,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 export default function ResultsList({ titles, scrollfunc, charFunc }) {
 
-
-
-
     if (titles === []) {
         return (
             <Box sx={{ width: "50%", marginTop: "25vh" }}>

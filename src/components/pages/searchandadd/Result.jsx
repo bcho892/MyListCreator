@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, Tooltip } from '@mui/material';
 import CurrentContext from './CurrentContext';
 
 
@@ -17,6 +17,7 @@ export default function Result({ singleTitle, scrollfunc, charFunc }) {
         touse = singleTitle.title;
     }
     return (
+        <Tooltip title="Click to see more Info">
         <Card elevation={2} sx={{borderRadius:"1rem", textAlign:"center", width: "80%",  margin: '1rem', overflow:'visible', borderColor:"primary" }} >
             <CardActionArea onClick={() => {changeCurrent(singleTitle);
                                             charFunc(singleTitle.mal_id);
@@ -45,5 +46,6 @@ export default function Result({ singleTitle, scrollfunc, charFunc }) {
             </CardActionArea>
 
         </Card>
+        </Tooltip>
     );
 }

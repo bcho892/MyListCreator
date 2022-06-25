@@ -27,7 +27,7 @@ const SortButton = () => {
 
     <SpeedDial
       ariaLabel='Sort button'
-      style={{ position: "absolute", bottom: "1rem", right: "2rem" }}
+      style={{ position: "absolute", bottom: "1rem", right: "1rem" }}
       icon={<SortIcon />}
     >
       <SpeedDialAction
@@ -72,7 +72,7 @@ export default function Collection() {
   const { anime } = React.useContext(CollectionContext);
 
   var collectionView;
-  console.log()
+ 
   if (anime.length === 0) {
     collectionView = <EmptyCollectionCard />
   } else {
@@ -93,7 +93,7 @@ export default function Collection() {
           </Box>
         </div>
 
-        <SortButton />
+        {anime.length === 0 ? null : <SortButton />}
 
       </div>
     </div>

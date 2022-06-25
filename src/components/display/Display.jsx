@@ -10,15 +10,13 @@ export default function Display({ anime }) {
   const { deleteAnime } = React.useContext(CollectionContext);
   return (
 
-    <Card variant="outlined" style={{ maxWidth: "350px", minWidth: "330px", textAlign: "center"}}>
+    <Card variant="outlined" style={{ maxWidth: "350px", minWidth: "18rem", textAlign: "center"}}>
 
-
-        
         <CardContent sx={{padding:"10px"}}>
         <Typography variant="body2" color="text.secondary"  >
           {anime.title}
           </Typography>
-          <img src={anime.images.jpg.image_url} alt={anime.images.webp.image_url} width="100%" style={{borderRadius:"0.75rem", paddingTop:"10px"}}></img>
+          <img src={anime.images.jpg.image_url} alt={anime.images.webp.image_url} style={{minWidth:"16rem" ,borderRadius:"0.75rem", paddingTop:"10px"}}></img>
 
         </CardContent>
      
@@ -39,7 +37,7 @@ export default function Display({ anime }) {
           </Tooltip>
         </NavLink>
         <Tooltip title="Go to MAL site">
-          <Button style={{minWidth:"40px"}} color='primary' onClick={() => window.open(anime.url, "_blank")}>
+          <Button style={{minWidth:"40px"}} color='primary' onClick={() => window.open(anime.url, "_blank","noopener" )}>
             <LanguageIcon />
           </Button>
         </Tooltip>

@@ -7,7 +7,6 @@ export function CurrentProvider({children}){
     const[showCharacters, setShowCharacters] = React.useState([]);
     const changeCurrent = (show) => {
         setCurrentShow(show);
-        console.log(show);
     };
     const setCharacters = (characterList) => {
         setShowCharacters(characterList)

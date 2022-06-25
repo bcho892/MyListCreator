@@ -5,9 +5,8 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 
-
 const actions = [
-    { option: "Top Rated", icon: <WhatshotIcon style={{ width: 20, height: 20 }} />, index: 0 },
+    { option: "Popular", icon: <WhatshotIcon style={{ width: 20, height: 20 }} />, index: 0 },
     { option: "Upcoming", icon: <CalendarMonthIcon style={{ width: 20, height: 20 }} />, index: 1 },
     { option: "Airing", icon: <LiveTvIcon style={{ width: 20, height: 20 }} />, index: 2 }]
 
@@ -26,6 +25,7 @@ export default function Suggestions({ fetchFor }) {
     return (
         <Stack direction="row" spacing={1}>
             {toDisplay}
+
         </Stack>
     )
 }

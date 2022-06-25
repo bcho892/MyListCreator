@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from '../../menu/Menu';
 import Header from '../../header/Header';
 import Searchandadd from "../searchandadd/Searchandadd"
+
 import "./addtitle.css"
 
 function Addtitle() {
@@ -12,6 +13,7 @@ function Addtitle() {
                 <span className='side'><Menu /></span>
                 <div className="main"><Searchandadd /></div>
             </div>
+  
         </div>
     );
 }
