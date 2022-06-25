@@ -6,7 +6,7 @@ import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/s
 import { CurrentProvider } from './components/pages/searchandadd/CurrentContext';
 import {CollectionProvider} from './components/pages/searchandadd/CollectionContext';
 import {
-    BrowserRouter,
+    HashRouter,
     Routes,
     Route,
 } from "react-router-dom";
@@ -40,14 +40,14 @@ export default function App() {
             <CollectionProvider>
             <ThemeProvider theme={theme}>
                 <div className='App'>
-                    <BrowserRouter>
+                    <HashRouter>
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="addtitle" element={<Addtitle />} />
                             <Route path="generatelist" element={<GenerateList />}/>
                         </Routes>
 
-                    </BrowserRouter>
+                    </HashRouter>
                 </div>
             </ThemeProvider>
             </CollectionProvider>

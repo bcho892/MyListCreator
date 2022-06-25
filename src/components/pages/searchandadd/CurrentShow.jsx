@@ -69,7 +69,7 @@ export default function CurrentShow({ show, characters }) {
 
 
 
-    var preview = !show.trailer.url ? null : <iframe src={'http://www.youtube.com/embed/' + show.trailer.youtube_id}
+    var preview = !show.trailer.url ? null : <iframe src={'https://www.youtube.com/embed/' + show.trailer.youtube_id}
         frameBorder='0'
         allow='autoplay; encrypted-media'
         allowfullscreen
