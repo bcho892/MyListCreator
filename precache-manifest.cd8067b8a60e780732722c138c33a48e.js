@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "da7bdfa655609fea9602",
+    "revision": "206de69c83d6417aec36",
     "url": "/MyListCreator/static/css/main.cb8557d7.chunk.css"
   },
   {
-    "revision": "da7bdfa655609fea9602",
-    "url": "/MyListCreator/static/js/main.da7bdfa6.chunk.js"
+    "revision": "206de69c83d6417aec36",
+    "url": "/MyListCreator/static/js/main.206de69c.chunk.js"
   },
   {
     "revision": "86ee184744c529ac9b16",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/MyListCreator/static/media/github.6059d097.svg"
   },
   {
-    "revision": "e04a062e15fe7ef0d29d33d70d427faa",
+    "revision": "0a920a4251ab54a5e73f2e9918e0f97c",
     "url": "/MyListCreator/index.html"
   }
 ];
