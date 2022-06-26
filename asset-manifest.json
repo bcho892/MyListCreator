@@ -1,7 +1,7 @@
 {
   "main.css": "/MyListCreator/static/css/main.1288ea89.chunk.css",
-  "main.js": "/MyListCreator/static/js/main.26d0a074.chunk.js",
-  "main.js.map": "/MyListCreator/static/js/main.26d0a074.chunk.js.map",
+  "main.js": "/MyListCreator/static/js/main.3d9357c4.chunk.js",
+  "main.js.map": "/MyListCreator/static/js/main.3d9357c4.chunk.js.map",
   "static/js/1.86ee1847.chunk.js": "/MyListCreator/static/js/1.86ee1847.chunk.js",
   "static/js/1.86ee1847.chunk.js.map": "/MyListCreator/static/js/1.86ee1847.chunk.js.map",
   "static/js/2.a324a723.chunk.js": "/MyListCreator/static/js/2.a324a723.chunk.js",
@@ -11,6 +11,6 @@
   "static/media/github.6059d097.svg": "/MyListCreator/static/media/github.6059d097.svg",
   "static/css/main.1288ea89.chunk.css.map": "/MyListCreator/static/css/main.1288ea89.chunk.css.map",
   "index.html": "/MyListCreator/index.html",
-  "precache-manifest.78d9456fbc4a73744d8e0a3b01d73074.js": "/MyListCreator/precache-manifest.78d9456fbc4a73744d8e0a3b01d73074.js",
+  "precache-manifest.39053df0595e9e4c2cf993396d70eac7.js": "/MyListCreator/precache-manifest.39053df0595e9e4c2cf993396d70eac7.js",
   "service-worker.js": "/MyListCreator/service-worker.js"
 }
