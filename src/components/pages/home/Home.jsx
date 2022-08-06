@@ -8,13 +8,11 @@ import Collection from '../collection/Collection'
 function Home() {
   return (
     <div>
-      <Header/>
+      <Header />
       <div className="maincontainer">
-      <span className='side'><Menu/></span>
-      <div className="main"><Collection/></div>
-      
+        <span className='side'><Menu /></span>
+        <div className="main"><Collection /></div>
       </div>
-
     </div>
   );
 }

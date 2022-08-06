@@ -1,35 +1,35 @@
-.currentdisplay{
-    flex:1;
+.currentdisplay {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.animedetails{
+.animedetails {
     display: flex;
     flex-direction: row;
-    height:100%;
+    height: 100%;
 }
 
-.detailbox{
+.detailbox {
     flex: 1;
- 
+
     margin: 2rem 5vw 2rem 0;
 }
 
 
-.characters{
+.characters {
     margin: 0 5vw;
     width: 100%;
     overflow-x: auto;
 }
 
-.dragcircle{
+.dragcircle {
     background-color: #D84315;
-    color:white;
+    color: white;
     text-align: center;
-    position:absolute;
+    position: absolute;
     z-index: 999;
     display: none;
     height: 3.5rem;
@@ -39,14 +39,14 @@
     border-radius: 50%;
 }
 
-.dragcircle.on{
+.dragcircle.on {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-.charactercontent{
+.charactercontent {
     width: 100%;
     height: 100%;
     overflow-x: auto;
@@ -54,31 +54,33 @@
     user-select: none;
 }
 
-.cardarea{
+.cardarea {
     transition: transform 0.3s;
 }
 
-.cardarea:hover{
-    transform:scale(0.95);
+.cardarea:hover {
+    transform: scale(0.95);
 }
 
-@media only screen and (max-width:1200px){
-    .animedetails{
+@media only screen and (max-width:1200px) {
+    .animedetails {
         flex-direction: column;
 
     }
-    .detailbox{
+
+    .detailbox {
         margin: 1rem 5vw;
     }
- 
+
 }
 
-@media only screen and (min-width:1200px){
-    .animedetails{
+@media only screen and (min-width:1200px) {
+    .animedetails {
         flex-direction: column;
 
     }
-    .detailbox{
+
+    .detailbox {
         margin: 1rem 2rem;
     }
 }

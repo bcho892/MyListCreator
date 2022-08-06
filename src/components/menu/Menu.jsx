@@ -22,7 +22,7 @@ export default function Menu() {
   return (
     <div className="menucontainer">
       <Modal
-        sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", overflowY: "auto" }}
         open={helpOpen}
         onClose={closeHelp}
         aria-labelledby="help dialog"
@@ -30,7 +30,7 @@ export default function Menu() {
         <Help />
       </Modal>
       <Modal
-        sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", overflowY: "auto" }}
         open={aboutOpen}
         onClose={closeAbout}
         aria-labelledby="help dialog"

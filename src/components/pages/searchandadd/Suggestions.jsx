@@ -11,7 +11,7 @@ const actions = [
     { option: "Airing", icon: <LiveTvIcon style={{ width: 20, height: 20 }} />, index: 2 }]
 
 export default function Suggestions({ fetchFor }) {
-    
+
     const noText = useMediaQuery('(max-width:600px)');
 
     const toDisplay = actions.map((action, index) => {

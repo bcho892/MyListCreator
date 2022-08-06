@@ -1,6 +1,5 @@
-html{
-    
-}
+html {}
+
 .searchfield {
     background-color: #FBE9E7;
     width: 100%;
@@ -23,7 +22,8 @@ html{
     border-radius: 1rem;
 
 }
-.resultcontent{
+
+.resultcontent {
     display: flex;
     height: 100%;
     justify-content: center;
@@ -50,8 +50,8 @@ html{
 
 }
 
-.suggestionholder{
+.suggestionholder {
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: center;
 }

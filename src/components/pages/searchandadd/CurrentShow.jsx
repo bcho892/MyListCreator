@@ -115,14 +115,14 @@ export default function CurrentShow({ show, characters }) {
                             onMouseMove={dragHandle}
                             onMouseOver={openDC}
                             onMouseLeave={closeDC}
-                            
+
                             sx={{ margin: "2rem 0", display: "flex", flexDirection: "row", width: "100%", overflowX: "auto", justifyContent: "center", alignItems: "center", minHeight: "23rem", backgroundColor: "#E0E0E0" }}
 
                         >
                             <div className="charactercontent" ref={ref}>
-                            <List sx={{ display: "flex", flexDirection: "row", width: fullWidth ? "76vw" : "62vw" }}>
-                                {characters.length !== [] && characters.data ? characters.data.slice(0, 20).map(data => <ListItem><CharacterCard character={data} /></ListItem>) : <CharacterCard character={null} />}
-                            </List>
+                                <List sx={{ display: "flex", flexDirection: "row", width: fullWidth ? "76vw" : "62vw" }}>
+                                    {characters.length !== [] && characters.data ? characters.data.slice(0, 20).map(data => <ListItem><CharacterCard character={data} /></ListItem>) : <CharacterCard character={null} />}
+                                </List>
                             </div>
                         </Paper>
                         <div>
@@ -145,7 +145,7 @@ export default function CurrentShow({ show, characters }) {
                             Add </Button>
                         <Button variant="contained"
                             style={{ margin: "2rem 1rem" }}
-                            onClick={() => window.open(show.url, "_blank","noopener")}
+                            onClick={() => window.open(show.url, "_blank", "noopener")}
                             disableElevation >
                             View On MAL </Button>
 

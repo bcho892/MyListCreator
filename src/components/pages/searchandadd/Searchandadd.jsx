@@ -82,8 +82,8 @@ export default function Searchandadd() {
 
         }, 1);
     }
-    function scrollUp(){
-        resultRef.current.scrollTo({ top: 0})
+    function scrollUp() {
+        resultRef.current.scrollTo({ top: 0 })
     }
     const enterSubmit = e => {
         e.preventDefault();
@@ -129,7 +129,7 @@ export default function Searchandadd() {
                             ></TextField>
                         </Box>
                         <div className="suggestionholder">
-                            <Suggestions fetchFor={getPremade}/>
+                            <Suggestions fetchFor={getPremade} />
                         </div>
                         <div className="resultholder">
                             <div className="resultcontent">

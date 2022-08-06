@@ -13,7 +13,7 @@ import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 
 
 const SortButton = () => {
-  const { anime, setAnime,clear } = React.useContext(CollectionContext);
+  const { anime, setAnime, clear } = React.useContext(CollectionContext);
   const checkSame = (array) => {
     for (let i = 0; i < array.length; i++) {
       if (array[i].title !== anime[i].title) {
@@ -72,7 +72,7 @@ export default function Collection() {
   const { anime } = React.useContext(CollectionContext);
 
   var collectionView;
- 
+
   if (anime.length === 0) {
     collectionView = <EmptyCollectionCard />
   } else {

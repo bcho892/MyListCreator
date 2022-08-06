@@ -4,7 +4,7 @@ import Addtitle from "./components/pages/addtitle/Addtitle"
 import GenerateList from './components/pages/GenerateList/GenerateList';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import { CurrentProvider } from './components/pages/searchandadd/CurrentContext';
-import {CollectionProvider} from './components/pages/searchandadd/CollectionContext';
+import { CollectionProvider } from './components/pages/searchandadd/CollectionContext';
 import {
     HashRouter,
     Routes,
@@ -15,14 +15,14 @@ var theme = createTheme({
     palette: {
         primary: {
             main: '#D84315',
-        }, 
+        },
         secondary: {
             main: '#FBE9E7'
         }
 
     },
     shape: {
-        borderRadius:20,
+        borderRadius: 20,
     },
     typography: {
         allVariants: {
@@ -38,18 +38,18 @@ export default function App() {
     return (
         <CurrentProvider>
             <CollectionProvider>
-            <ThemeProvider theme={theme}>
-                <div className='App'>
-                    <HashRouter>
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="addtitle" element={<Addtitle />} />
-                            <Route path="generatelist" element={<GenerateList />}/>
-                        </Routes>
+                <ThemeProvider theme={theme}>
+                    <div className='App'>
+                        <HashRouter>
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="addtitle" element={<Addtitle />} />
+                                <Route path="generatelist" element={<GenerateList />} />
+                            </Routes>
 
-                    </HashRouter>
-                </div>
-            </ThemeProvider>
+                        </HashRouter>
+                    </div>
+                </ThemeProvider>
             </CollectionProvider>
         </CurrentProvider>
     )
